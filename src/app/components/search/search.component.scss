@@ -6,7 +6,8 @@
         background-color: #7B2CBF;
         display: flex;
         justify-content: flex-start;
-       // position: fixed; //<-- causing issues with the slider 
+        //position: fixed; //<-- causing issues with the slider 
+        z-index: 100;
     }
  
     &-button {

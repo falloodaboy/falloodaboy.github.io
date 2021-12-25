@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ContactmodalcontentComponent } from '../contactmodalcontent/contactmodalcontent.component';
 
 @Component({
   selector: 'app-search',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-
-  constructor() { }
+  private modelref;
+  constructor(
+    private ngb: NgbModal
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  
+  OpenModal() {
+   this.modelref = this.ngb.open(ContactmodalcontentComponent);
   }
 
 }

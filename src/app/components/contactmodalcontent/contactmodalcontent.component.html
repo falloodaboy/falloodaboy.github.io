@@ -1,0 +1,22 @@
+<div class="modal-header">
+</div>
+<div class="modal-body">
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+        Name: <input type="text" formControlName="name">
+        Email: <input type="text" formControlName="email">
+        Message: <textarea cols="30" rows="10" formControlName="message"></textarea>
+    </form>
+</div>
+
+<div class="modal-footer">
+    <button 
+     type="button" 
+     class="btn btn-success"
+     (click)="onSubmit()"
+     >Send</button>
+    <button 
+     type="button" 
+     class="btn btn-danger"
+     (click)="this.ngbactive.close()"
+     >Cancel</button>
+</div>
