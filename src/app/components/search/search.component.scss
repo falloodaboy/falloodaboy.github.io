@@ -1,0 +1,45 @@
+.search-nav {
+
+    &-container {
+        width: 100%;
+        height: 35px;
+        background-color: #7B2CBF;
+        display: flex;
+        justify-content: flex-start;
+       // position: fixed; //<-- causing issues with the slider 
+    }
+ 
+    &-button {
+        color: white;
+        background-color: #9D4EDD;
+        font-size: large;
+        margin: 1px;
+        outline: none;
+        border: none;
+        transition: all 0.2s ease-in-out;
+        width: 100px;
+
+
+        &:first-child {
+            margin-left: 5px;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+
+        &:last-child {
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        &:hover {
+            color: #9D4EDD;
+            background-color: #fff;
+        }
+
+        &:active {
+            background-color: gray;
+            transition: 0.1s;
+        }
+    }
+
+}
