@@ -3,7 +3,9 @@
     &-container {
         background-color: #10002B;
         width: 100%;
-        height: 100%;
+        height: calc(100% - 35px);
+        padding-left: 5%;
+        padding-right: 5%;
         position: absolute;
     }
 
@@ -38,23 +40,273 @@
 
     &-slider {
         &-container {
-            background-color: cyan;
+            background-color:#240046;
             width: 100%;
             height: 100%;
             &-videos {
                 display: flex;
                 justify-content: center;
+                align-items: center;
+                height: 100%;
             }
 
             &-video {
                 width: 100%;
                 height: 100%;
+                background-color: #202020;
+            }
+        }
+    }
+
+    &-info {
+        &-container {
+            position: relative;
+           
+        }
+
+        &-canvas {
+            height: 100%;
+            width: 100%;
+            background-color: red;
+            z-index:  -1;
+            position: absolute;
+        }
+
+        &-portrait {
+            width: 450px;
+            height: 550px;
+            position: absolute;
+            z-index: 4;
+            top: 100px;
+           // margin-left: 65%;
+           // margin-top: 6.5%;
+            border: 5px solid #7B2CBF;
+            // -webkit-animation: fadein 0.5s ease-in alternate 1;
+            // -moz-animation: fadein 0.5s ease-in alternate 1;
+            // animation: fadein 0.5s ease-in alternate 1;
+            
+        }
+
+        &-text {
+            color: #7B2CBF;
+            border: 3px solid #7B2CBF;
+            border-radius: 10px;
+            background-color: #fff;
+            height: 150px;
+            width: 900px;
+            position: relative;
+            top: 100px;
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            // -webkit-animation: textfadein 1.8s ease-in alternate 1;
+            // -moz-animation: textfadein 1.8s ease-in alternate 1;
+            // animation: textfadein 1.8s ease-in alternate 1;
+
+            &-p {
+                font-size: large;
+                position: relative;
+                top: 15%;
+                padding: 0px 10px;
+            }
+        }
+
+        &-welcome {
+            color: #fff;
+            font-size: 100px;
+            font-weight: 900;
+            display: inline-block;
+            line-height: 1rem;
+            &-container {
+                width: 100%;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        
+
+        &-social {
+            height: 50px;
+            width:  150px;
+            position: relative;
+            top: 120px;
+            //left: 150px;
+            padding-bottom: 5px;
+            padding-top: 5px;
+            border-top: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            
+            &-icon {
+                height: 100%;
+                width: 100%;
+                background-color: transparent;
+                cursor: pointer;
+            }
+
+            &-span {
+                height: 100%;
+                width: 40px; 
+                //margin-left: 10px;
+            }
+
+            &-span:not(:first-child) {
+                margin-left: 10px;
+            }
+        }
+
+        &-company {
+            position: relative;
+            overflow-y: auto;
+            border: 3px solid #7B2CBF;
+            border-radius: 3px;
+            display:inline-block;
+            top: 120px;
+            height: 380px;
+            width: 425px;
+            background-color: #fff;
+            margin-right: 50px;
+            
+            &-header {
+                font-weight: 500;
+                font-size: 30px;
+                display: flex;
+                justify-content: center;
+                color: #7B2CBF;
+            }
+            &-wrapper {
+
+                width: 100%;
+                height: 130px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 30px;
+                &-img {
+                    height: 100px;
+                    width: 100px;
+
+                }
+            }
+        }
+
+        &-skills {
+            position: relative;
+            display:inline-block;
+            border: 3px solid #fff;
+            border-radius: 3px;
+            overflow-y: auto;
+            height: 380px;
+            top: 120px;
+            width: 425px;
+            background-color: #7B2CBF;
+
+            &-flex {
+                display: flex;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+            }
+
+            &-header {
+                font-weight: 500;
+                font-size: 30px;
+                display: flex;
+                justify-content: center;
+                color: #fff;
+            }
+
+            &-wrapper {
+                width: 130px;
+                height: 130px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 30px;
+                &-img {
+                    height: 100px;
+                    width: 100px;
+
+                }
             }
         }
     }
 }
 
+.letter {
+    display: inline-block;
+    line-height: 1rem;
+    opacity: 1;
+}
+
+.splide__slide {
+    overflow: auto;
+}
+.glide {
+    height: 100%;
+}
+.glide__track {
+    height: 100%;
+}
+.glide__slides {
+    height:100%;
+}
 .glide__slide {
     display: flex;
-    justify-content: center;
+   // justify-content: center;
+}
+
+.anime-container {
+    width: 90%;
+}
+
+.test {
+    width: 100%;
+    height: 400px;
+    &-canvas {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+        background-color: black;
+    }
+}
+
+@keyframes fadein {
+    
+    from {
+        opacity: 0;
+        margin-left: 60%;
+    }
+
+    to {
+        opacity: 1;
+        margin-left: 65%;
+    }
+}
+
+@keyframes textfadein {
+   0% {
+        opacity: 0;
+      //  margin-top: 0px;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 1;
+       // margin-top: 100px;
+    }
 }

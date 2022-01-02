@@ -1,0 +1,45 @@
+.header {
+    background-color: #7B2CBF;
+    color: #fff;
+}
+
+.body {
+    background-color: #7B2CBF;
+    color: #fff;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.footer {
+    background-color: #7B2CBF;
+    color: #fff;
+}
+
+.modalspan {
+    display: inline-block;
+    width: 100px;
+    font-size: large;
+    margin-right: 10px;
+}
+
+.modalinput {
+    width: 190px;
+}
+
+.modaldiv {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.modalmspan {
+    display: inline-block;
+    width: 100px;
+    font-size: large;
+    margin-right: 10px;
+    justify-content: start;
+}
+
+.modaltextarea {
+    width: 300px;
+}
+

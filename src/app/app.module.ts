@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactmodalcontentComponent } from './components/contactmodalcontent/contactmodalcontent.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgParticlesModule } from 'ng-particles';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgParticlesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

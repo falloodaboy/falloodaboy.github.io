@@ -1,14 +1,16 @@
-<div class="modal-header">
+<div class="modal-header header">
+    <h1>Let's Stay In Touch!</h1>
 </div>
-<div class="modal-body">
+<div class="modal-body body">
     <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-        Name: <input type="text" formControlName="name">
-        Email: <input type="text" formControlName="email">
-        Message: <textarea cols="30" rows="10" formControlName="message"></textarea>
+       <div class="modaldiv"> <span class="modalspan">Name:</span>  <input class="modalinput" type="text" formControlName="name"></div>  
+       <div class="modaldiv"> <span class="modalspan">Email:</span>   <input class="modalinput" type="text" formControlName="email"> </div> 
+       <div class="modaldiv"> <span class="modalspan">Company:</span>   <input class="modalinput" type="text" formControlName="company"> </div>
+       <div class="modaldiv"> <span class="modalmspan">Message:</span>  <textarea class="modaltextarea" cols="15" rows="2" formControlName="message"></textarea> </div> 
     </form>
 </div>
 
-<div class="modal-footer">
+<div class="modal-footer footer">
     <button 
      type="button" 
      class="btn btn-success"

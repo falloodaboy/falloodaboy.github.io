@@ -21,12 +21,14 @@ export class ContactmodalcontentComponent implements OnInit {
     this.formGroup = new FormGroup({
         name: new FormControl(),
         email: new FormControl('yourid@host.com'),
-        message: new FormControl('your message here...')
+        message: new FormControl('your message here...'),
+        company: new FormControl()
     });
   }
 
   onSubmit() {
       console.log(this.formGroup);
+      //send email here
   }
 
 }

@@ -18,7 +18,11 @@ export class SearchComponent implements OnInit {
 
   
   OpenModal() {
-   this.modelref = this.ngb.open(ContactmodalcontentComponent);
+   this.modelref = this.ngb.open(ContactmodalcontentComponent, {
+     size: 'lg',
+     backdrop: 'static',
+     centered: true
+   });
   }
 
 }
