@@ -10,13 +10,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactmodalcontentComponent } from './components/contactmodalcontent/contactmodalcontent.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgParticlesModule } from 'ng-particles';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SearchComponent,
-    ContactmodalcontentComponent
+    ContactmodalcontentComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,

@@ -31,7 +31,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
       direction: 'ttb',
       gap: '1em',
       drag: false,
-      pagination: false
+      pagination: false,
+      wheel: true
     }).mount();
 
    this.glide = new Glide('.glide', {
@@ -80,16 +81,24 @@ export class HomeComponent implements OnInit, AfterViewInit {
             duration: 1500,
             delay: (el, i) => 70*i,
             autoplay: false
-        }, '-= 1000')
+        }, '-= 1100')
         .add({
             targets: '.anime-container',
             opacity: [0, 1],
-            translateX: [-50, 50],
-            duration: 1500,
+            translateX: [0, 50],
+            duration: 500,
             easing: "easeInOutSine",
             delay: 100,
             autoplay: false
-        }, '-= 1000');
+        }, '-= 1000')
+        .add({
+            targets: '.home-projectScroll',
+            opacity: [0, 1],
+            duration: 500,
+            easing: "easeInOutSine",
+            delay: 100,
+            autoplay: false
+        });
    
         window.onload = (ev) => {
            

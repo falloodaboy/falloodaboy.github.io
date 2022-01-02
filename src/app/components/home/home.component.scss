@@ -1,5 +1,17 @@
 .home {
 
+    &-projectScroll {
+        position: relative;
+        width: 100%;
+        color: #fff;
+        font-size: large;
+        font-weight: 900;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        top: 170px;
+    }
+
     &-container {
         background-color: #10002B;
         width: 100%;
@@ -163,13 +175,13 @@
         &-company {
             position: relative;
             overflow-y: auto;
-            border: 3px solid #7B2CBF;
+            border: 3px solid #fff;
             border-radius: 3px;
             display:inline-block;
             top: 120px;
             height: 380px;
             width: 425px;
-            background-color: #fff;
+            background-color: #7B2CBF;
             margin-right: 50px;
             
             &-header {
