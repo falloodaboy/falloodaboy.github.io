@@ -1,0 +1,50 @@
+.projectile {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: opacity 0.18s ease-in-out;
+
+    &-background {
+        width: 100%;
+        height: 90%;
+        position: relative;
+    }   
+
+    &-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position:relative;
+        height: 10%;
+        width:100%;
+        color: #fff;
+        background-color: #7B2CBF;
+        font-weight: 900;
+        font-size: 35px;
+        z-index: 4;
+    }
+
+    &-desc {
+        display: flex;
+        justify-content: flex-start;
+        position: absolute;
+        width: 100%;
+        background-color: grey;
+        color: #fff;
+        font-size: large;
+        font-weight: 900;
+        top: 100%;
+        height: 100%;
+        transition: top 0.5s ease-in-out;
+    }
+
+    &-descactive {
+
+    }
+
+    &:hover {
+        opacity: 0.85;
+        cursor: pointer;
+
+    }
+}

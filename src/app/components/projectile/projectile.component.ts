@@ -20,4 +20,12 @@ export class ProjectileComponent implements OnInit {
   public openProject(event) {
       window.open(this.projectUrl);
   }
+
+  public showDesc() {
+    
+  }
+
+  public hideDesc() {
+    
+  }
 } 
