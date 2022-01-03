@@ -39,7 +39,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
    this.glide = new Glide('.glide', {
       type: 'carousel',
-    }).mount();
+      perView: 1,
+      startAt: 0
+    });
     
     let headwrapper = this.welcome_container.nativeElement;
     headwrapper.innerHTML = headwrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
@@ -105,78 +107,20 @@ export class HomeComponent implements OnInit, AfterViewInit {
         anim1.play();
         welcomsign.play();
 
-        window.onload = (ev) => {
-           
-           
-            
-        }
+        window.onunload = (ev) => {
+            this.glide.destroy();
+        };
+
+        window.onload = (ev) => {  
+            this.glide.mount(); 
+        };
 
         
-    //    this.location.subscribe((next) => {
-    //     let anim1 = anime({
-    //         targets: ' .home-info-social',
-    //         opacity: [0, 1],
-    //         translateX: [1000,1150],
-    //         duration: 1500,
-    //         easing: "easeInOutSine",
-    //         delay: 100,
-    //         autoplay: false
-    //     });
-    
-    //     let anim2 = anime({
-    //         targets: ' .home-info-portrait',
-    //         opacity: [0, 1],
-    //         translateX: [800,1000],
-    //         duration: 1500,
-    //         easing: "easeInOutSine",
-    //         delay: 100,
-    //         autoplay: false
-    //     });
-    
-    
-    //     let welcomsign = anime.timeline({loop: false, autoplay: false})
-    //         .add({
-    //             targets: ' .home-info-portrait',
-    //             opacity: [0, 1],
-    //             translateX: [800,1000],
-    //             duration: 1500,
-    //             easing: "easeInOutSine",
-    //             delay: 100,
-    //             autoplay: false
-    //         })
-    //         .add({
-    //             targets: '.home-info-welcome .letter',
-    //             scale: [4,1],
-    //             opacity: [0,1],
-    //             translateZ: 0,
-    //             easing: "easeOutExpo",
-    //             duration: 1500,
-    //             delay: (el, i) => 70*i,
-    //             autoplay: false
-    //         }, '-= 1100')
-    //         .add({
-    //             targets: '.anime-container',
-    //             opacity: [0, 1],
-    //             translateX: [0, 50],
-    //             duration: 500,
-    //             easing: "easeInOutSine",
-    //             delay: 100,
-    //             autoplay: false
-    //         }, '-= 1000')
-    //         .add({
-    //             targets: '.home-projectScroll',
-    //             opacity: [0, 1],
-    //             duration: 500,
-    //             easing: "easeInOutSine",
-    //             delay: 100,
-    //             autoplay: false
-    //         });
-    //         if(next.url == "") {
-    //             console.log("playing");
-    //             anim1.play();
-    //             welcomsign.play();
-    //         }
-    //    });
+       this.location.subscribe((next) => {
+            if(next.url == "") {
+                this.glide.mount();
+            }
+       });
         
   }
 

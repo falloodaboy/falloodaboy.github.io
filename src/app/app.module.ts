@@ -11,6 +11,8 @@ import { ContactmodalcontentComponent } from './components/contactmodalcontent/c
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgParticlesModule } from 'ng-particles';
 import { ProjectsComponent } from './components/projects/projects.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { ProjectileComponent } from './components/projectile/projectile.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { ProjectsComponent } from './components/projects/projects.component';
     HomeComponent,
     SearchComponent,
     ContactmodalcontentComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ProjectileComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { ProjectsComponent } from './components/projects/projects.component';
     BrowserAnimationsModule,
     NgbModule,
     ReactiveFormsModule,
-    NgParticlesModule
+    NgParticlesModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

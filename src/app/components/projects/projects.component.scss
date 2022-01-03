@@ -10,5 +10,19 @@
         width: 90%;
         margin-left: 5%;
         margin-right: 5%;
+        position: relative;
+        overflow: auto;
+        &-grid {
+           
+           
+           
+            &-tile {
+                background-color: cyan;
+            }
+        }
     }
 }
+
+// mat-grid-tile {
+//     //background-color: cyan;
+// }
