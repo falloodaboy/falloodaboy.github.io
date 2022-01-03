@@ -4,7 +4,7 @@ import { Splide } from '@splidejs/splide';
 import { tsParticles } from 'tsparticles';
 import { NgParticlesComponent } from 'ng-particles';
 import anime from 'animejs';
-import { ClickEvent } from 'tsparticles/Options/Classes/Interactivity/Events/ClickEvent';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +22,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
    @ViewChild('SliderContainer') slider_container: ElementRef<HTMLDivElement>;
    @ViewChild('WelcomeContainer') welcome_container: ElementRef<HTMLHeadingElement>;
 
-  constructor() {
+  constructor(
+      private location: Location
+  ) {
 
    }
   ngAfterViewInit(): void {
@@ -99,15 +101,83 @@ export class HomeComponent implements OnInit, AfterViewInit {
             delay: 100,
             autoplay: false
         });
-   
+
+        anim1.play();
+        welcomsign.play();
+
         window.onload = (ev) => {
            
-            anim1.play();
-           // anim2.play();
-            welcomsign.play();
+           
             
         }
 
+        
+    //    this.location.subscribe((next) => {
+    //     let anim1 = anime({
+    //         targets: ' .home-info-social',
+    //         opacity: [0, 1],
+    //         translateX: [1000,1150],
+    //         duration: 1500,
+    //         easing: "easeInOutSine",
+    //         delay: 100,
+    //         autoplay: false
+    //     });
+    
+    //     let anim2 = anime({
+    //         targets: ' .home-info-portrait',
+    //         opacity: [0, 1],
+    //         translateX: [800,1000],
+    //         duration: 1500,
+    //         easing: "easeInOutSine",
+    //         delay: 100,
+    //         autoplay: false
+    //     });
+    
+    
+    //     let welcomsign = anime.timeline({loop: false, autoplay: false})
+    //         .add({
+    //             targets: ' .home-info-portrait',
+    //             opacity: [0, 1],
+    //             translateX: [800,1000],
+    //             duration: 1500,
+    //             easing: "easeInOutSine",
+    //             delay: 100,
+    //             autoplay: false
+    //         })
+    //         .add({
+    //             targets: '.home-info-welcome .letter',
+    //             scale: [4,1],
+    //             opacity: [0,1],
+    //             translateZ: 0,
+    //             easing: "easeOutExpo",
+    //             duration: 1500,
+    //             delay: (el, i) => 70*i,
+    //             autoplay: false
+    //         }, '-= 1100')
+    //         .add({
+    //             targets: '.anime-container',
+    //             opacity: [0, 1],
+    //             translateX: [0, 50],
+    //             duration: 500,
+    //             easing: "easeInOutSine",
+    //             delay: 100,
+    //             autoplay: false
+    //         }, '-= 1000')
+    //         .add({
+    //             targets: '.home-projectScroll',
+    //             opacity: [0, 1],
+    //             duration: 500,
+    //             easing: "easeInOutSine",
+    //             delay: 100,
+    //             autoplay: false
+    //         });
+    //         if(next.url == "") {
+    //             console.log("playing");
+    //             anim1.play();
+    //             welcomsign.play();
+    //         }
+    //    });
+        
   }
 
   ngOnInit(): void {

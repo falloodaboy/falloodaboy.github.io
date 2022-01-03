@@ -34,8 +34,10 @@ $portfolio-theme: mat-light-theme((
 @include angular-material-theme($portfolio-theme);
 
 /* You can add global styles to this file, and also import other style files */
-
-html, body { height: calc(100% - 35px)}
+.tester {
+  background-color: #10002B;
+}
+html, body { height: calc(100%); background-color:#10002B;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color:#10002B; }
 
 /* Importing Bootstrap SCSS file. */

@@ -1,0 +1,14 @@
+.projects {
+    display: flex;
+    height: calc(100% - 35px);
+    width: 100%;
+    justify-content: center;
+
+    &-container {
+        background-color: #240046;
+        height: calc(100%);
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
