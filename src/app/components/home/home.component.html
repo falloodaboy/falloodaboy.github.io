@@ -12,7 +12,7 @@
                               </div>
                               
                               <img class="home-info-portrait" src="assets/images/shot.jpg" alt="photo">
-                                <ng-particles [id]="id" [options]="particlesOptions" class="home-info-canvas">
+                                <ng-particles [id]="id" [options]="particlesOptions" class="home-info-canvas" (particlesLoaded)="particlesLoaded($event)">
 
                                 </ng-particles>
                           <div class="anime-container" >

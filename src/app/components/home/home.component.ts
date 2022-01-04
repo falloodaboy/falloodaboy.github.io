@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import Glide from '@glidejs/glide';
 import { Splide } from '@splidejs/splide';
-import { tsParticles } from 'tsparticles';
+import { Container, tsParticles } from 'tsparticles';
 import { NgParticlesComponent } from 'ng-particles';
 import anime from 'animejs';
 import { Location } from '@angular/common';
@@ -48,30 +48,22 @@ export class HomeComponent implements OnInit, AfterViewInit {
     let anim1 = anime({
         targets: ' .home-info-social',
         opacity: [0, 1],
-        translateX: [1000,1150],
-        duration: 1500,
+        translateX: [800, 1000],
+        duration: 1000,
         easing: "easeInOutSine",
         delay: 100,
         autoplay: false
     });
-
     let anim2 = anime({
-        targets: ' .home-info-portrait',
-        opacity: [0, 1],
-        translateX: [800,1000],
-        duration: 1500,
-        easing: "easeInOutSine",
-        delay: 100,
-        autoplay: false
+      
     });
-
 
     let welcomsign = anime.timeline({loop: false, autoplay: false})
         .add({
             targets: ' .home-info-portrait',
             opacity: [0, 1],
-            translateX: [800,1000],
-            duration: 1500,
+            translateX: ['250%', '270%'],
+            duration: 700,
             easing: "easeInOutSine",
             delay: 100,
             autoplay: false
@@ -82,19 +74,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
             opacity: [0,1],
             translateZ: 0,
             easing: "easeOutExpo",
-            duration: 1500,
+            duration: 1000,
             delay: (el, i) => 70*i,
             autoplay: false
-        }, '-= 1100')
+        }, '-= 600')
         .add({
             targets: '.anime-container',
             opacity: [0, 1],
-            translateX: [0, 50],
+            translateX: ['0%', '5%'],
             duration: 500,
             easing: "easeInOutSine",
             delay: 100,
             autoplay: false
-        }, '-= 1000')
+        }, '-= 500')
         .add({
             targets: '.home-projectScroll',
             opacity: [0, 1],
@@ -102,9 +94,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
             easing: "easeInOutSine",
             delay: 100,
             autoplay: false
+        })
+        .add({
+            targets: '.home-info-canvas',
+            opacity: [0,1],
+            duration: 500,
+            easing: "easeInExpo",
+            delay: 100,
+            autoplay: false
         });
 
         anim1.play();
+        anim2.play();
         welcomsign.play();
 
         window.onunload = (ev) => {
@@ -131,7 +132,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
             value: "#10002B"
         }
     },
-    fpsLimit: 60,
+    fpsLimit: 30,
     interactivity: {
         events: {
             onClick: {
@@ -198,7 +199,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
         size: {
             random: true,
             value: 3
-        }
+        },
+
+      
     },
     detectRetina: true
     };
@@ -206,6 +209,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
    
  }
 
+ particlesLoaded(container: Container): void {
+    
+}
  openLink(event) {
      console.log(event);
      if(event.target.src == "http://localhost:9000/assets/images/github.png") {
