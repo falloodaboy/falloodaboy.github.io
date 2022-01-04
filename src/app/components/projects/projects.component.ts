@@ -1,3 +1,11 @@
+export interface projectile {
+    title: string,
+    desc: string,
+    snap: string,
+    purl: string
+};
+
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +14,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
+
+
+  public projects:projectile[] = [
+    {
+      title: "",
+      desc: "",
+      snap: "",
+      purl: ""
+    }
+  ]
   public cols = 3
   public title = "This Is a Tile";
   public desc = "This is a description";
@@ -19,3 +37,4 @@ export class ProjectsComponent implements OnInit {
   }
 
 }
+
