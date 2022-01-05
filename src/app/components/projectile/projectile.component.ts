@@ -30,7 +30,9 @@ export class ProjectileComponent implements OnInit, AfterViewInit{
   }
 
   public showDesc() {
-    this.hidedesc = undefined;
+    if(this.hidedesc !== undefined)
+      this.hidedesc = undefined;
+
     if(this.showdesc == undefined) {
       this.showdesc = anime({
         targets: '.projectile-desc',
@@ -43,7 +45,9 @@ export class ProjectileComponent implements OnInit, AfterViewInit{
   }
 
   public hideDesc() {
-    this.showdesc = undefined;
+    if(this.showdesc !== undefined)
+      this.showdesc = undefined;
+      
     if(this.hidedesc == undefined) {
       this.hidedesc = anime({
         targets: '.projectile-desc',

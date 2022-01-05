@@ -5,6 +5,7 @@ import { Container, tsParticles } from 'tsparticles';
 import { NgParticlesComponent } from 'ng-particles';
 import anime from 'animejs';
 import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -23,46 +24,53 @@ export class HomeComponent implements OnInit, AfterViewInit {
    @ViewChild('WelcomeContainer') welcome_container: ElementRef<HTMLHeadingElement>;
 
   constructor(
-      private location: Location
+      private location: Location,
+      private activeroute: ActivatedRoute
   ) {
 
    }
   ngAfterViewInit(): void {
-    this.splide =  new Splide('.splide', {
-      height: this.slider_container.nativeElement.clientHeight + 'px',
-      direction: 'ttb',
-      gap: '1em',
-      drag: false,
-      pagination: false,
-      wheel: true
-    }).mount();
-
-   this.glide = new Glide('.glide', {
-      type: 'carousel',
-      perView: 1,
-      startAt: 0
-    });
     
-    let headwrapper = this.welcome_container.nativeElement;
-    headwrapper.innerHTML = headwrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    
+    
+    this.activeroute.url.subscribe((next) => {
+        if(next.toString() == "") {
+            
+            this.splide =  new Splide('.splide', {
+                height: this.slider_container.nativeElement.clientHeight + 'px',
+                direction: 'ttb',
+                gap: '1em',
+                drag: false,
+                pagination: false,
+                wheel: true
+              }).mount();
+
+            console.log("remaking glide");
+            this.glide = new Glide('.glide', {
+                type: 'carousel',
+                perView: 1
+              });
+           this.glide.destroy();
+           this.glide.mount();
+        }
+    });
+   let headwrapper = this.welcome_container.nativeElement;
+   headwrapper.innerHTML = headwrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
     let anim1 = anime({
         targets: ' .home-info-social',
         opacity: [0, 1],
-        translateX: [800, 1000],
+        translateX: [-20, 0],
         duration: 1000,
         easing: "easeInOutSine",
         delay: 100,
         autoplay: false
-    });
-    let anim2 = anime({
-      
     });
 
     let welcomsign = anime.timeline({loop: false, autoplay: false})
         .add({
             targets: ' .home-info-portrait',
             opacity: [0, 1],
-            translateX: ['250%', '270%'],
+            translateX: [-20, 0],
             duration: 700,
             easing: "easeInOutSine",
             delay: 100,
@@ -79,9 +87,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
             autoplay: false
         }, '-= 600')
         .add({
-            targets: '.anime-container',
+            targets: '.home-info-meat',
             opacity: [0, 1],
-            translateX: ['0%', '5%'],
+            translateX: [-20, 0],
             duration: 500,
             easing: "easeInOutSine",
             delay: 100,
@@ -105,24 +113,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
         });
 
         anim1.play();
-        anim2.play();
-        welcomsign.play();
-
-        window.onunload = (ev) => {
-            this.glide.destroy();
-        };
-
-        window.onload = (ev) => {  
-            this.glide.mount(); 
-        };
-
-        
-       this.location.subscribe((next) => {
-            if(next.url == "") {
-                this.glide.mount();
-            }
-       });
-        
+        welcomsign.play();    
+    
+ 
   }
 
   ngOnInit(): void {
@@ -206,7 +199,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     detectRetina: true
     };
     
-   
+ 
  }
 
  particlesLoaded(container: Container): void {
