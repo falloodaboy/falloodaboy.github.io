@@ -7,6 +7,7 @@ import anime from 'animejs';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -15,6 +16,7 @@ import { ActivatedRoute } from '@angular/router';
 export class HomeComponent implements OnInit, AfterViewInit {
    splide;
    glide;
+   splide2;
    particlesOptions;
    textinfo: string =
        "Hello, my name is Zohaib Wasim. I am a student at the University of Pittsburgh pursuing a bachelor's in Computer Science. I have completed multiple internships with PPG."
@@ -29,9 +31,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ) {
 
    }
+  
+  
+
+ 
+
   ngAfterViewInit(): void {
-    
-    
     
     this.activeroute.url.subscribe((next) => {
         if(next.toString() == "") {
@@ -45,13 +50,23 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 wheel: true
               }).mount();
 
+            this.splide =  new Splide('.splide2', {
+                height: this.slider_container.nativeElement.clientHeight + 'px',
+                type: 'loop',
+                direction: 'ltr',
+                gap: '1em',
+                drag: false,
+                pagination: false
+            }).mount();
+            
+        
             console.log("remaking glide");
-            this.glide = new Glide('.glide', {
-                type: 'carousel',
-                perView: 1
-              });
-           this.glide.destroy();
-           this.glide.mount();
+        //     this.glide = new Glide('.glide', {
+        //         type: 'carousel',
+        //         perView: 1
+        //       });
+        //    this.glide.destroy();
+        //    this.glide.mount();
         }
     });
    let headwrapper = this.welcome_container.nativeElement;
