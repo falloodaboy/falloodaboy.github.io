@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import Glide from '@glidejs/glide';
 import { Splide } from '@splidejs/splide';
 import { Container, tsParticles } from 'tsparticles';
@@ -50,7 +50,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 wheel: true
               }).mount();
 
-            this.splide =  new Splide('.splide2', {
+           
+
+            this.splide2 =  new Splide('.splide2', {
                 height: this.slider_container.nativeElement.clientHeight + 'px',
                 type: 'loop',
                 direction: 'ltr',
@@ -58,15 +60,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 drag: false,
                 pagination: false
             }).mount();
-            
-        
-            console.log("remaking glide");
-        //     this.glide = new Glide('.glide', {
-        //         type: 'carousel',
-        //         perView: 1
-        //       });
-        //    this.glide.destroy();
-        //    this.glide.mount();
+
+            this.splide.on('move', () => {
+                this.splide2.go('+1');
+            });
         }
     });
    let headwrapper = this.welcome_container.nativeElement;

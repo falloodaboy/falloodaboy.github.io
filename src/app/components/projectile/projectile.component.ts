@@ -12,51 +12,46 @@ export class ProjectileComponent implements OnInit, AfterViewInit{
   @Input() description:string;
   @Input() snapshotUrl:string;
   @Input() title:string;
-
+  @ViewChild('desc') desc: ElementRef<HTMLSpanElement>;
+  @ViewChild('projectile') projectile: ElementRef<HTMLDivElement>;
+  @ViewChild('text') text: ElementRef<HTMLParagraphElement>;
   showdesc;
   hidedesc;
+  restartanim = true;
   constructor() { }
   
   
+  printHi() {
+    console.log("Hi");
+  }
+
   ngAfterViewInit(): void {
-    
+    this.projectile.nativeElement.onmouseenter = (ev) => {
+        this.desc.nativeElement.style.top = "0%";
+        this.desc.nativeElement.style.opacity = "1";
+        this.text.nativeElement.style.opacity = "1";
+    }
+
+    this.projectile.nativeElement.onmouseleave = (ev) => {
+      this.desc.nativeElement.style.top = "100%";
+      this.desc.nativeElement.style.opacity = "1";
+      this.text.nativeElement.style.opacity = "0";
+    }
   }
 
   ngOnInit(): void {
   }
 
-  public openProject(event) {
+  openProject(event) {
       window.open(this.projectUrl);
   }
 
-  public showDesc() {
-    if(this.hidedesc !== undefined)
-      this.hidedesc = undefined;
-
-    if(this.showdesc == undefined) {
-      this.showdesc = anime({
-        targets: '.projectile-desc',
-        top: '0%',
-        duration: 200,
-        easing: 'easeInSine'
-      });
-    }
+  showDesc() {
     
   }
 
-  public hideDesc() {
-    if(this.showdesc !== undefined)
-      this.showdesc = undefined;
-      
-    if(this.hidedesc == undefined) {
-      this.hidedesc = anime({
-        targets: '.projectile-desc',
-        top: '100%',
-        duration: 200,
-        easing: 'easeOutSine'
-      });
-    }
-    
+  hideDesc() {
+
   }
 } 
 

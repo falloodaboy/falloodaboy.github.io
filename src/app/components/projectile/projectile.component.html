@@ -1,7 +1,9 @@
-<div class="projectile" (click)="openProject($event)" (mouseover)="showDesc()" (mouseout)="hideDesc()" >
+<div class="projectile" (click)="openProject($event)" #projectile>
     <img class="projectile-background" src=" {{ snapshotUrl }} " alt="" >
     <h1 class="projectile-title"> {{ title }} </h1>
-    <span class="projectile-desc">
-        {{ description }}
+    <span class="projectile-desc" #desc>
+        <p class="projectile-desc-text" #text>
+            {{ description }}
+        </p>
     </span>
 </div>

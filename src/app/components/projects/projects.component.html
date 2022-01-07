@@ -1,31 +1,14 @@
 <div class="projects">
     <div class="projects-container">
         <mat-grid-list cols=" {{ cols }} " rowHeight="1:1" gutterSize="10px" class="projects-container-grid">
-            <mat-grid-tile class="projects-container-grid-tile">
+            <mat-grid-tile *ngFor="let project of projects" class="projects-container-grid-tile">
                 <app-projectile style="height: 100%; width:100%;"
-                [projectUrl] = "purl"
-                [description] = "desc"
-                [snapshotUrl] = "snap"
-                [title] = "title"
+                [projectUrl] = "project.purl"
+                [description] = "project.desc"
+                [snapshotUrl] = "project.snap"
+                [title] = "project.title"
                 ></app-projectile>
             </mat-grid-tile>
-
-            <mat-grid-tile class="projects-container-grid-tile">
-                <app-projectile></app-projectile>
-            </mat-grid-tile>
-            <mat-grid-tile class="projects-container-grid-tile">
-                <app-projectile></app-projectile>
-            </mat-grid-tile>
-            <mat-grid-tile class="projects-container-grid-tile">
-                <app-projectile></app-projectile>
-            </mat-grid-tile>
-            <mat-grid-tile class="projects-container-grid-tile">
-                <app-projectile></app-projectile>
-            </mat-grid-tile>
-            <mat-grid-tile class="projects-container-grid-tile">
-                <app-projectile></app-projectile>
-            </mat-grid-tile>
-
         </mat-grid-list>
     </div>
 </div>
