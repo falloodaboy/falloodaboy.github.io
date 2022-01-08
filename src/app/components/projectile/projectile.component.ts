@@ -40,7 +40,7 @@ export class ProjectileComponent implements OnInit, AfterViewInit{
       this.desc.nativeElement.style.top = "100%";
       this.text.nativeElement.style.opacity = "0";
       this.display.nativeElement.style.filter = "blur(0px)";
-        this.display.nativeElement.style.transform = "scale(1)";
+      this.display.nativeElement.style.transform = "scale(1)";
     }
   }
 
@@ -49,14 +49,6 @@ export class ProjectileComponent implements OnInit, AfterViewInit{
 
   openProject(event) {
       window.open(this.projectUrl);
-  }
-
-  showDesc() {
-    
-  }
-
-  hideDesc() {
-
   }
 } 
 

@@ -6,6 +6,7 @@ import { NgParticlesComponent } from 'ng-particles';
 import anime from 'animejs';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { ToastService } from 'src/app/mail/toast.service';
 
 
 @Component({
@@ -27,7 +28,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   constructor(
       private location: Location,
-      private activeroute: ActivatedRoute
+      private activeroute: ActivatedRoute,
+      private toasts: ToastService
   ) {
 
    }
@@ -211,7 +213,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     detectRetina: true
     };
     
- 
+    this.toasts.toasts = [];
  }
 
  particlesLoaded(container: Container): void {

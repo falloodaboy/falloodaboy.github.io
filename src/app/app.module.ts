@@ -6,13 +6,18 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbToast } from '@ng-bootstrap/ng-bootstrap';
 import { ContactmodalcontentComponent } from './components/contactmodalcontent/contactmodalcontent.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgParticlesModule } from 'ng-particles';
 import { ProjectsComponent } from './components/projects/projects.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { ProjectileComponent } from './components/projectile/projectile.component'
+import { HttpClientModule } from '@angular/common/http';
+import {LayoutModule} from '@angular/cdk/layout';
+import { ApptoastsComponent } from './components/apptoasts/apptoasts.component';
+import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
+import { ToastService } from './mail/toast.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,8 @@ import { ProjectileComponent } from './components/projectile/projectile.componen
     SearchComponent,
     ContactmodalcontentComponent,
     ProjectsComponent,
-    ProjectileComponent
+    ProjectileComponent,
+    ApptoastsComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +36,15 @@ import { ProjectileComponent } from './components/projectile/projectile.componen
     NgbModule,
     ReactiveFormsModule,
     NgParticlesModule,
-    MatGridListModule
+    MatGridListModule,
+    FormsModule,
+    HttpClientModule,
+    LayoutModule,
+    NgbToastModule
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
