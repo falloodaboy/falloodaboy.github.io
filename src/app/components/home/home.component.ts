@@ -20,11 +20,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
    splide2;
    particlesOptions;
    textinfo: string =
-       "Hello, my name is Zohaib Wasim. I am a student at the University of Pittsburgh pursuing a bachelor's in Computer Science. I have completed multiple internships with PPG."
+       "Thanks for dropping by! My name is Zohaib Wasim. I am a student at the University of Pittsburgh pursuing a bachelor's in Computer Science. I am a passionate software developer who enjoys cracking tough problems with code and working with like-minded people to develop new software technologies. I've also had the chance to put my passion to work as a software developer working for PPG and JumpStart through internships. I am always looking for new opportunities and always happy to meet new people. If you are interested in working with me, feel free to reach out using the contact form!"
    ;
    id = "Particles"
    @ViewChild('SliderContainer') slider_container: ElementRef<HTMLDivElement>;
    @ViewChild('WelcomeContainer') welcome_container: ElementRef<HTMLHeadingElement>;
+   @ViewChild('meatContainer') meatContainer: ElementRef<HTMLDivElement>;
+   @ViewChild('personwrapper') personwrapper: ElementRef<HTMLDivElement>;
 
   constructor(
       private location: Location,
@@ -74,7 +76,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         targets: ' .home-info-social',
         opacity: [0, 1],
         translateX: [-20, 0],
-        duration: 1000,
+        duration: 700,
         easing: "easeInOutSine",
         delay: 100,
         autoplay: false
@@ -128,8 +130,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
         anim1.play();
         welcomsign.play();    
-    
- 
+
   }
 
   ngOnInit(): void {

@@ -19,20 +19,20 @@ export class ProjectsComponent implements OnInit {
   public projects:projectile[] = [
     {
       title: "BackTrackSolver",
-      desc: "Solves a crossword puzzle recursively",
+      desc: "Solves a crossword puzzle recursively using a back-tracking algorithm to find and highlight every word found in the crossword puzzle.",
       snap: "assets/projectsnapshots/backtracksolver.png",
       purl: "https://github.com/falloodaboy/Projects/tree/main/BackTrackSolver"
     },
 
     {
       title: "BubbleSim",
-      desc: "Bubble shooter game created in MIPS assembly language",
+      desc: "Bubble shooter game created in MIPS assembly language using the Mars emulator.",
       snap: "assets/projectsnapshots/bubblesim.png",
       purl:  "https://github.com/falloodaboy/Projects/tree/main/BubbleSim"
     },
     {
       title: "Car Sales Optimizer",
-      desc: "Min Heap implementation to simulate finding the best car given what aspects the customer is looking for",
+      desc: "Min Heap implementation to simulate finding the best car given what aspects the customer is looking for.",
       snap: "assets/projectsnapshots/HeapImp.png",
       purl: "https://github.com/falloodaboy/Projects/tree/main/HeapImp"
     },
@@ -50,7 +50,7 @@ export class ProjectsComponent implements OnInit {
     // },
     {
       title: "Roulette Simulation",
-      desc: "Roulette game written in Java as practice with Java Threads",
+      desc: "Roulette game written in Java as practice with Java Threads.",
       snap: "assets/projectsnapshots/RouletteSim.png",
       purl: "https://github.com/falloodaboy/Projects/tree/main/RouletteSim"
     },
