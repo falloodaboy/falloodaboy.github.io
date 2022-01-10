@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         if(next.toString() == "") {
             
             this.splide =  new Splide('.splide', {
-                height: this.slider_container.nativeElement.clientHeight + 'px',
+                height: 'calc(100vh - 35px)',
                 direction: 'ttb',
                 gap: '1em',
                 drag: false,
@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
            
 
             this.splide2 =  new Splide('.splide2', {
-                height: this.slider_container.nativeElement.clientHeight + 'px',
+                height: 'calc(100vh - 35px)',
                 type: 'loop',
                 direction: 'ltr',
                 gap: '1em',
