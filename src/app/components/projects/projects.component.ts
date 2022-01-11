@@ -19,7 +19,7 @@ export class ProjectsComponent implements OnInit {
   public projects:projectile[] = [
     {
       title: "BackTrackSolver",
-      desc: "Solves a crossword puzzle recursively using a back-tracking algorithm to find and highlight every word found in the crossword puzzle.",
+      desc: "Solves a crossword puzzle recursively using a back-tracking algorithm to find and highlight every word found in the phrase.",
       snap: "assets/projectsnapshots/backtracksolver.png",
       purl: "https://github.com/falloodaboy/Projects/tree/main/BackTrackSolver"
     },
