@@ -222,10 +222,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
 }
  openLink(event) {
      console.log(event);
-     if(event.target.src == "http://localhost:9000/assets/images/github.png") {
+     if(event.target.src == "https://falloodaboy.github.io/assets/images/github.png") {
          window.open("https://github.com/falloodaboy/Projects");
      }
-     else if(event.target.src == "http://localhost:9000/assets/images/test.png") {
+     else if(event.target.src == "https://falloodaboy.github.io/assets/images/test.png") {
         window.open("https://www.linkedin.com/in/zohaib-wasim/");
      }
  }

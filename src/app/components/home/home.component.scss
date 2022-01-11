@@ -3,7 +3,7 @@
     &-projectScroll {
          position: relative;
          color: #fff;
-         font-size: large;
+         font-size: 0.75vw;
          font-weight: 900;
          top: 4%;
     }
@@ -170,6 +170,7 @@
                 position: relative;
                 font-weight: 500;
                 padding: 0px 10px;
+                line-height: normal;
             }
         }
 
