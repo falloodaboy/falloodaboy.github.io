@@ -7,6 +7,7 @@ export interface projectile {
 
 
 import { Component, OnInit } from '@angular/core';
+import { ToastService } from 'src/app/mail/toast.service';
 
 @Component({
   selector: 'app-projects',
@@ -71,10 +72,10 @@ export class ProjectsComponent implements OnInit {
   private calc = Math.floor(this.projects.length / 2);
   public cols =  this.calc >= 5 ? this.calc : 5;
   // this.calc >= 6 ? this.calc : 6
-  constructor() { }
+  constructor(private toasts: ToastService) { }
 
   ngOnInit(): void {
-      
+      this.toasts.toasts = [];
   }
 
 }

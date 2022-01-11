@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgbModule, NgbToast } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ContactmodalcontentComponent } from './components/contactmodalcontent/contactmodalcontent.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgParticlesModule } from 'ng-particles';
@@ -17,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {LayoutModule} from '@angular/cdk/layout';
 import { ApptoastsComponent } from './components/apptoasts/apptoasts.component';
 import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
-import { ToastService } from './mail/toast.service';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { ToastService } from './mail/toast.service';
     NgbToastModule
   ],
   providers: [
-    
+    {provide: LocationStrategy, useClass: PathLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })
