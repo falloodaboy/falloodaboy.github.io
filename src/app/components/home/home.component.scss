@@ -191,33 +191,34 @@
         
 
         &-social {
-            height: 4.9vh;
-            width:  5vw;
+            height: auto;
+            width:  3vw;
             position: relative;
-            margin-top: 15px;
-            padding-bottom: 5px;
-            padding-top: 5px;
+            margin-top: 0.5vh;
             border-top: 2px solid #fff;
             border-bottom: 2px solid #fff;
             display: flex;
-            justify-content: center;
-            align-content: center;
+            justify-content: space-around;
+            align-items: center;
             
             &-icon {
-                height: 100%;
-                width: 100%;
+                width: 75%;
                 background-color: transparent;
                 cursor: pointer;
             }
 
             &-span {
-                height: 100%;
-                width: 40px; 
-                //margin-left: 10px;
+                width: 50%; 
+                margin: 0.5vh 0vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+               
             }
 
             &-span:not(:first-child) {
-                margin-left: 10px;
+               
+               
             }
         }
 

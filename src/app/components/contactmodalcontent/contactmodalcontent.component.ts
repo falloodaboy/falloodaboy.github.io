@@ -38,12 +38,6 @@ export class ContactmodalcontentComponent implements OnInit {
         message: this.formGroup.get('message').value as string,
         from_company: this.formGroup.get('company').value as string
       }
-      // emailjs.send("contact_service","contact_form",{
-      //   from_name: "John Doe",
-      //   from_company: "Acme Corp",
-      //   message: "This is a test",
-      //   from_email: "john.doe@gmail.com",
-      //   });
       emailjs.send('contact_service', 'contact_form', tempParams)
       .then((response) => {
           this.ngbactive.close('SUCCESS');
