@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {LayoutModule} from '@angular/cdk/layout';
 import { ApptoastsComponent } from './components/apptoasts/apptoasts.component';
 import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
-import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -44,7 +44,7 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
     NgbToastModule
   ],
   providers: [
-    {provide: LocationStrategy, useClass: PathLocationStrategy}
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })
