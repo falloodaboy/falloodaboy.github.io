@@ -30,7 +30,6 @@ export class ContactmodalcontentComponent implements OnInit {
   }
 
   onSubmit() {
-      console.log(this.formGroup);
       //send email here
       let tempParams = {
         from_name: this.formGroup.get('name').value as string,
