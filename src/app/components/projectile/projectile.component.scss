@@ -33,8 +33,10 @@
         width: 100%;
         background-color: rgba(102, 102, 102, 1);
         height: 100%;
-        top: 100%;
-        transition: top 0.2s ease-in-out, background 0.2s ease-in-out;
+        top: 0%;
+        transform: translateY(100%);
+        transition: transform 0.2s ease-in-out, background 0.2s ease-in-out;
+        will-change: transform;
         opacity: 1;
         overflow: auto;
         &-text {
@@ -44,12 +46,9 @@
             padding-left: 10px;
             font-weight: 900;
             line-height: 1.5;
-            transition:  opacity 0.2s ease-in-out, top 0.2s ease-in-out;
-            opacity: 0;
         }
     }
     &:hover {
-        //opacity: 0.85;
         cursor: pointer;
 
     }
