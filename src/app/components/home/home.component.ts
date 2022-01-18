@@ -53,8 +53,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 wheel: true
               }).mount();
 
-           
-
+              if(window.innerWidth <= 770) {
+                  this.splide.options = {
+                      wheel: false
+                  };
+                  this.splide.destroy();
+                  this.splide.mount();
+              }
+            
             this.splide2 =  new Splide('.splide2', {
                 height: 'calc(100vh - 35px)',
                 type: 'loop',
