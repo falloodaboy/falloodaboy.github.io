@@ -24,7 +24,7 @@ export class ProjectileComponent implements OnInit, AfterViewInit{
   
   
   printHi() {
-    console.log("Hi");
+    //console.log("Hi");
   }
 
   ngAfterViewInit(): void {

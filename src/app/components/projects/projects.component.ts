@@ -6,6 +6,7 @@ export interface projectile {
 };
 
 
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { ToastService } from 'src/app/mail/toast.service';
 
@@ -72,10 +73,35 @@ export class ProjectsComponent implements OnInit {
   private calc = Math.floor(this.projects.length / 2);
   public cols =  this.calc >= 5 ? this.calc : 5;
   // this.calc >= 6 ? this.calc : 6
-  constructor(private toasts: ToastService) { }
+  constructor(
+    private toasts: ToastService,
+    private bpobserver: BreakpointObserver
+    ) { }
 
   ngOnInit(): void {
       this.toasts.toasts = [];
+      const bpobservable = this.bpobserver.observe([
+        '(min-width: 1040px)',
+        '(min-width: 771px) and (max-width: 1040px)',
+        '(min-width: 481px) and (max-width: 771px)',
+        '(min-width: 321px) and (max-width: 481px)'
+      ]);
+
+      bpobservable.subscribe((next) => {
+          //console.log(next);
+          if(next.breakpoints["(min-width: 1040px)"]) {
+            this.cols = 5;
+          }
+          else if(next.breakpoints["(min-width: 771px) and (max-width: 1040px)"]) {
+            this.cols = 3;
+          }
+          else if(next.breakpoints["(min-width: 481px) and (max-width: 771px)"]) {
+            this.cols = 2;
+          }
+          else if(next.breakpoints["(min-width: 321px) and (max-width: 481px)"]) {
+            this.cols = 1;
+          } 
+      });
   }
 
 }

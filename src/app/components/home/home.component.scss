@@ -1053,7 +1053,7 @@
                 justify-content: center;
                 align-items: center;
                 &-p {
-                    font-size: 0.5em;
+                    font-size: 0.6em;
                     font-weight: 500;
                     padding: auto 10px;
                     line-height: 1.4em;
@@ -1476,7 +1476,7 @@
         }
     }  
 }
-
+//need to change this for kindle landscape
 @media screen and (min-width: 481px) and (max-width: 770px) and (orientation: landscape) {
     .home {
 
