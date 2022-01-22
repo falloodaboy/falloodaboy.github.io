@@ -48,7 +48,7 @@ export class ProjectileComponent implements OnInit, AfterViewInit{
   }
 
   openProject(event) {
-      window.open(this.projectUrl);
+      //window.open(this.projectUrl);
   }
 } 
 
