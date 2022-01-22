@@ -7,7 +7,7 @@ import anime from 'animejs';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { ToastService } from 'src/app/mail/toast.service';
-
+import { gsap } from 'gsap';
 
 @Component({
   selector: 'app-home',
@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
        "Thanks for dropping by! My name is Zohaib Wasim. I am a student at the University of Pittsburgh pursuing a bachelor's in Computer Science. I am a passionate software developer who enjoys cracking tough problems with code and working with like-minded people to develop new software technologies. I've also had the chance to put my passion to work as a software developer working for PPG and JumpStart through internships. I am always looking for new opportunities and always happy to meet new people. If you are interested in working with me, feel free to reach out using the contact form!"
    ;
    id = "Particles"
+   tl: any;
    @ViewChild('SliderContainer') slider_container: ElementRef<HTMLDivElement>;
    @ViewChild('WelcomeContainer') welcome_container: ElementRef<HTMLHeadingElement>;
    @ViewChild('meatContainer') meatContainer: ElementRef<HTMLDivElement>;
@@ -74,68 +75,72 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 this.splide2.go('+1');
             });
         }
-    });
+      
+
    let headwrapper = this.welcome_container.nativeElement;
+
    headwrapper.innerHTML = headwrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-    let anim1 = anime({
-        targets: ' .home-info-social',
-        opacity: [0, 1],
-        translateX: [-20, 0],
-        duration: 700,
-        easing: "easeInOutSine",
-        delay: 100,
-        autoplay: false
+   this.tl = gsap.timeline({
+        repeat: 0,
+        paused: false
     });
-
-    let welcomsign = anime.timeline({loop: false, autoplay: false})
-        .add({
-            targets: ' .home-info-portrait',
-            opacity: [0, 1],
-            translateX: [-20, 0],
-            duration: 700,
-            easing: "easeInOutSine",
-            delay: 100,
-            autoplay: false
-        })
-        .add({
-            targets: '.home-info-welcome .letter',
-            scale: [4,1],
-            opacity: [0,1],
+   this.tl.fromTo('.home-info-welcome, .letter', {
+            opacity: 0,
+            scale: 2,
+            translateZ: 0
+        }, {
+            opacity: 1,
+            scale: 1,
             translateZ: 0,
-            easing: "easeOutExpo",
-            duration: 1000,
-            delay: (el, i) => 70*i,
-            autoplay: false
-        }, '-= 600')
-        .add({
-            targets: '.home-info-meat',
-            opacity: [0, 1],
-            translateX: [-20, 0],
-            duration: 500,
-            easing: "easeInOutSine",
-            delay: 100,
-            autoplay: false
-        }, '-= 500')
-        .add({
-            targets: '.home-projectScroll',
-            opacity: [0, 1],
-            duration: 500,
-            easing: "easeInOutSine",
-            delay: 100,
-            autoplay: false
-        })
-        .add({
-            targets: '.home-info-canvas',
-            opacity: [0,1],
-            duration: 500,
-            easing: "easeInExpo",
-            delay: 100,
-            autoplay: false
+            duration: 1,
+            ease: "expo.inOut"
         });
+    this.tl.fromTo(' .home-info-social, .home-info-portrait', {
+            x: -20,
+            opacity: 0
+        }, {
+            x: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "sine.inOut"
+    },"-=0.1");
 
-        anim1.play();
-        welcomsign.play();    
+    // this.tl.fromTo(' .home-info-portrait', {
+    //         opacity: 0,
+    //         x: -20
+    //     }, {
+    //         opacity: 1,
+    //         x: 0,
+    //         duration: 1,
+    //         ease: "sine.inout"
+    // }, "-=0.1");
 
+    this.tl.fromTo('.home-info-meat', {
+            opacity: 0,
+            x: -20
+        }, {
+            opacity: 1,
+            x: 0,
+            duration: 1,
+            ease: "sine.inOut"
+    }, '-=0.1');
+
+    this.tl.fromTo('.home-projectScroll', {
+            opacity: 0,
+        }, {
+            opacity: 1,
+            ease: "sine.inOut",
+            duration: 1
+    }, '-=0.1');
+
+    this.tl.fromTo('.home-info-canvas', {
+            opacity: 0
+        }, {
+            opacity: 1,
+            ease: "sine.inOut",
+            duration: 1
+        }, '-=0.1');
+    });
   }
 
   ngOnInit(): void {
@@ -218,7 +223,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     },
     detectRetina: true
     };
-    
     this.toasts.toasts = [];
  }
 
@@ -235,3 +239,62 @@ export class HomeComponent implements OnInit, AfterViewInit {
      }
  }
 }
+    
+    // let anim1 = anime({
+    //     targets: ' .home-info-social',
+    //     opacity: [0, 1],
+    //     translateX: [-20, 0],
+    //     duration: 700,
+    //     easing: "easeInOutSine",
+    //     delay: 100,
+    //     autoplay: false
+    // });
+
+    // let welcomsign = anime.timeline({loop: false, autoplay: false})
+    //     .add({
+    //         targets: ' .home-info-portrait',
+    //         opacity: [0, 1],
+    //         translateX: [-20, 0],
+    //         duration: 700,
+    //         easing: "easeInOutSine",
+    //         delay: 100,
+    //         autoplay: false
+    //     })
+    //     .add({
+    //         targets: '.home-info-welcome .letter',
+    //         scale: [4,1],
+    //         opacity: [0,1],
+    //         translateZ: 0,
+    //         easing: "easeOutExpo",
+    //         duration: 1000,
+    //         delay: (el, i) => 70*i,
+    //         autoplay: false
+    //     }, '-= 600')
+    //     .add({
+    //         targets: '.home-info-meat',
+    //         opacity: [0, 1],
+    //         translateX: [-20, 0],
+    //         duration: 500,
+    //         easing: "easeInOutSine",
+    //         delay: 100,
+    //         autoplay: false
+    //     }, '-= 500')
+    //     .add({
+    //         targets: '.home-projectScroll',
+    //         opacity: [0, 1],
+    //         duration: 500,
+    //         easing: "easeInOutSine",
+    //         delay: 100,
+    //         autoplay: false
+    //     })
+    //     .add({
+    //         targets: '.home-info-canvas',
+    //         opacity: [0,1],
+    //         duration: 500,
+    //         easing: "easeInExpo",
+    //         delay: 100,
+    //         autoplay: false
+    //     });
+
+        // anim1.play();
+        // welcomsign.play();    
