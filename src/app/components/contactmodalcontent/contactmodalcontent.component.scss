@@ -13,6 +13,7 @@
     color: #fff;
     display: flex;
     justify-content: flex-start;
+    width: 100%;
 }
 
 .footer {
@@ -22,13 +23,14 @@
 
 .modalspan {
     display: inline-block;
-    width: 100px;
+    width: 25%;
     font-size: large;
     margin-right: 10px;
 }
 
 .modalinput {
-    width: 190px;
+    width: 100%;
+  //  margin-left: 2%;
 }
 
 .modaldiv {
@@ -38,7 +40,7 @@
 
 .modalmspan {
     display: inline-block;
-    width: 100px;
+    width: 25%;
     font-size: large;
     margin-right: 10px;
     justify-content: start;
@@ -46,6 +48,13 @@
 
 .modaltextarea {
     width: 100%;
-    margin-left: 7%;
+   // margin-left: 2%;
 }
 
+#formgroup {
+    width: 100%;
+}
+
+.modal-yeet {
+    max-width: 50px;
+}
