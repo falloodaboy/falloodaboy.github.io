@@ -230,7 +230,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     
 }
  openLink(event) {
-     console.log(event);
      if(event.target.src == "https://falloodaboy.github.io/assets/images/github.png") {
          window.open("https://github.com/falloodaboy");
      }
